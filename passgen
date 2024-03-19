@@ -1,0 +1,75 @@
+from random import choice
+import string
+grootletters=list(string.ascii_uppercase)
+kleinletters=list(string.ascii_lowercase)
+nummers=[str(i) for i in range(10)]
+specialcharacters=['!','@','#','$','%','^','&','*']
+# A = grootletters
+antwoord=int(input('kies 1 voor wachtwoord maken \n 2 for exit'))
+if antwoord == 1:
+    a=str(input('wil je dat het grootletters bevatten? ja of nee'))
+    while a != 'nee' and a != 'ja':
+        print('type ja of nee A.U.B')
+        a=str(input('wil je dat het grootletters bevatten? ja of nee'))
+    if a == 'ja' :
+         groot = True
+    else:
+        groot = False
+
+    #B=Kleinletters
+    b=str(input('wil je klein letters hebben? ja of nee'))
+    while b != 'ja' and b != 'nee':
+        print('type ja of nee A.U.B')
+        b=str(input('wil je klein letters hebben? ja of nee'))
+    if b == 'ja' :
+        klein =True
+    else:
+        klein = False
+    #C= nummers
+    c=str(input('wil je nummers? ja of nee'))
+    while c != 'ja' and c != 'nee':
+        print('type ja of nee A.U.B')
+        c=str(input('wil je nummers? ja of nee'))
+    if c == 'ja' :
+        nummer = True
+    else:
+        nummer = False
+# D = special character
+    d=str(input('wil je special characters hebben?  ja of nee'))
+    while d != 'ja' and d != 'nee':
+        print('type ja of nee A.U.B')
+        d=str(input('wil je special characters hebben?  ja of nee'))
+    if d == 'ja' :
+        special = True
+    else:
+        special = False
+    #e= lengte
+    e=int(input('hoelang wil het wachtwoord zijn?'))
+    while e < 4:
+        print('kort wachtwoord')
+        e=int(input('het moet 4 of meer?'))
+
+    randlist = []
+    if groot :
+        randlist += grootletters
+    if klein :
+        randlist += kleinletters
+    if nummer :
+        randlist += nummers
+    if special :
+        randlist += specialcharacters
+    wachtwoord= ''
+
+    for i in range(e):
+        wachtwoord += choice(randlist)
+
+    print('het gemaakte wachtwoord is')
+    print('##############')
+    print(wachtwoord)
+    print('##############')
+
+else:
+    print('dank je voor het gebruiken van mijn script')
+    print('tot ziens')
+    exit
+
